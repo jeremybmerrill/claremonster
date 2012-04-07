@@ -5,6 +5,14 @@ $dark-grey: #333;
 $med-green: #8ec640;
 $lt-green: #bfe973;
 
+
+a:visited {
+     color: white;
+}
+
+
+
+/* Buttons */
 h1 {
 	text-shadow: 0px 0px 3px $dark-grey;
 }
@@ -52,3 +60,6 @@ h1 {
 .wish-donw-deal {
 	background-color: yellow;
 }
+
+
+

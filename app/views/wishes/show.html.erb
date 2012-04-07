@@ -1,35 +1,42 @@
 <p id="notice"  class="alert alert-error"><%= notice %></p>
 <% provide(:title, @wish.title) %>
-
+<div class="wish-unit">
 <div class="row">
 
 <div class="span4">Image</div>
-<p>
-  <b>I wish for:</b>
-  <%= @wish.title %>
-</p>
+<div class="span6">
+    <h1 class="wish-title"><%= @wish.title %></h1>
+    <p class="wish-description"><%= @wish.description %></p>
+    <p class="wish-deal"><span class="label">Ideal Deal</span>
+    <%= @wish.deal %></p>
+    
+       <% if @wish.claimed? %>
+          <p class="wish-done-deal">
+	  <%= @wish.claimmsg %>
+	  </p>
+       <% end %>
 
-<p>
-  <b>Description:</b>
-  <%= @wish.description %>
-</p>
+<p class="wish-description"><%= link_to 'Edit', edit_wish_path(@wish) %> | <%= link_to 'Destroy', @wish, confirm: 'Crush this wish?',
+    method: :delete %></p>
+    
+</div>
 
-<p>
-  <b>Proposed incentive:</b>
-  <%= @wish.deal %>
-</p>
+<div class="span3 wish-upvote">
+	<h2><%= @wish.threshold %></h2>
+	<p>Upvotes Needed</p>
 
-<p>
-  <b>Upvotes needed:</b>
-  <%= @wish.threshold %>
-</p>
+	<% if @wish.claimed? %>
+	<a class="btn btn-primary" href="#">Claimed!</a>
+	<% else %>
+	<a class="btn btn-success" href="#">Unclaimed!</a>
+	<% end %>
+</div>
 
 
 </div>
+</div>
 
 <div class="row">
-
-
 
 
 <h2>Comments</h2>
