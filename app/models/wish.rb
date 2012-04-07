@@ -24,7 +24,7 @@ has_many :comments, :dependent => :destroy
 
       clean_phone = text_this_user.phonenumber.gsub(" ", "").gsub("(", "").gsub(")", "").gsub("-", "").gsub(".", "") 
       
-      text_string = 'Your deal for ' + self.title + " has been claimed by " + business + "! Go there for your incentive!"
+      text_string = 'Your deal for ' + self.title + " has been claimed by " + self.claimmsg[self.claimmsg.index(" claimed")] + "! Go there for your incentive!"
       text_string = text_string[0..159]
       
       @client.account.sms.messages.create(
