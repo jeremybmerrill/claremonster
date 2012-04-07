@@ -24,16 +24,22 @@
   <%= @wish.threshold %>
 </p>
 
+<<<<<<< HEAD
 <% if current_user and current_user.admin? %>
     <p>
       <b>Claim This Wish:</b>
       <%= link_to 'EditClaim', editClaim_wish_path(@wish) %>
     </p>
 <% end %>
+=======
 
 </div>
 
 <div class="row">
+
+
+
+>>>>>>> c427d327d2a84b383e75c7bd190678330aa1d65a
 
 <h2>Comments</h2>
 <%= render @wish.comments %>
