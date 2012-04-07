@@ -32,6 +32,16 @@
 	<% end %>
 </div>
 
+<p>
+  <b>Current upvotes:</b>
+  <%= @wish.upvotes.count %>
+</p>
+
+<p>
+  <b>Upvote now!</b>
+  <%= render "upvotes/form" %>
+</p>
+
 <% if current_user and current_user.admin? %>
     <p>
       <b>Claim This Wish:</b>
