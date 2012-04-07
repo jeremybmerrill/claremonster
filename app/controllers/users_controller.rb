@@ -12,4 +12,5 @@ class UsersController < ApplicationController
       format.json { render json: @user }
     end
   end
+
 end
