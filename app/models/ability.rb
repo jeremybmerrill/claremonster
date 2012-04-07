@@ -10,12 +10,14 @@ class Ability
          can :edit, :all
          can :claim, :all
          can :export, :all
-       else
+       elsif not user.id.nil?
          can :read, :all
          can :upvote, :all
          can :create, :all
          can [:update, :edit], Wish.all.find_all{|wish| wish.user == user}
-	 can [:update, :edit, :destroy], Comment.all.find_all{|wish| wish.user == user}
+	     can [:update, :edit, :destroy], Comment.all.find_all{|wish| wish.user == user}
+       else #not logged in
+         can :read, :all
        end
     
     # The first argument to `can` is the action you are giving the user permission to do.
