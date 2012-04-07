@@ -22,6 +22,8 @@
 	<p>Upvotes Needed</p>
 	<p>Current Upvotes:
 		<%= wish.upvotes.count %>
+		<% @wish = wish %>
+		<%= render 'upvotes/form' %>
 	</p>
 
 	<% if wish.claimed? %>
