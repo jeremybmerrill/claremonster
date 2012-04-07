@@ -28,9 +28,7 @@ h1 {
 }
 
 
-
-
-.wish-description, .wish-deal {
+.wish-description, .wish-deal, .wish-done-deal {
 	border-radius: 10px;
 	padding: 15px;
 	box-shadow: 0px 0px 3px white;
@@ -49,4 +47,8 @@ h1 {
 .wish-deal {
 	background-color: $med-green;
 	font-weight: bold;
+}
+
+.wish-donw-deal {
+	background-color: yellow;
 }
