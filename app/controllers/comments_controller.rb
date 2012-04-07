@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+    load_and_authorize_resource #cancan
+
 	def create
      	@wish = Wish.find(params[:wish_id])
    	 	@comment = @wish.comments.create(params[:comment])
