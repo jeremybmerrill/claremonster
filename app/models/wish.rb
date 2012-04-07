@@ -5,5 +5,6 @@ validates_presence_of :title, :description, :threshold
 
 belongs_to :user
 has_many :upvotes
+has_many :comments, :dependent => :destroy
 
 end

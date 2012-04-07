@@ -12,6 +12,21 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
+  <div><%= f.label :displayname %><br />
+  <%= f.text :displayname %></div>
+
+  <div><%= f.label :year %><br />
+  <%= f.text :year %></div>
+
+  <% schools_array = ["CMC", "Mudd", "Pomona", "Scripps", "Pitzer", "CGU", "KGI", "Offcampus"].map { |school| [school, school.downcase] }  %>
+  <div><%= f.label :school %><br />
+  <%= f.select :school, options_for_select(schools_array) %></div>
+
+  <div><%= f.label :phonenumber %><br />
+  <%= f.phone_field :phonenumber %></div>
+
+  <div><%= f.submit "Update" %></div>
+
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 

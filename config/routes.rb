@@ -13,7 +13,10 @@ Claremonster::Application.routes.draw do
 
   devise_for :users
 
-  resources :wishes
+  #root :to => 'wishes#index' #lala i have no idea what i'm doing
+  resources :wishes do
+    resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

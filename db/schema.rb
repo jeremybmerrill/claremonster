@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120407083854) do
+ActiveRecord::Schema.define(:version => 20120407085817) do
+
+  create_table "comments", :force => true do |t|
+    t.text     "comment"
+    t.integer  "wish_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["wish_id"], :name => "index_comments_on_wish_id"
 
   create_table "upvotes", :force => true do |t|
     t.integer  "user_id"
@@ -37,6 +47,8 @@ ActiveRecord::Schema.define(:version => 20120407083854) do
     t.integer  "year"
     t.string   "school"
     t.boolean  "admin"
+    t.string   "likes"
+    t.string   "phonenumber"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

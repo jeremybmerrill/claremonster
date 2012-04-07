@@ -25,8 +25,14 @@
   <div><%= f.label :school %><br />
   <%= f.select :school, options_for_select(schools_array) %></div>
 
-  <div><%= f.label :phonenumber %><br />
-  <%= f.phone_field :phonenumber %></div>
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+<!--
+    t.integer  "year"
+    t.string   "school"
+    also phone number
+-->
 
   <div><%= f.submit "Update" %></div>
 <% end %>
