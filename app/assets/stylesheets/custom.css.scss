@@ -36,7 +36,7 @@ h1 {
 }
 
 
-.wish-description, .wish-deal, .wish-done-deal {
+.wish-description, .wish-deal, .wish-done-deal, .comment {
 	border-radius: 10px;
 	padding: 15px;
 	box-shadow: 0px 0px 3px white;
@@ -67,12 +67,20 @@ a:visited.btn {
     color: white;
 }
 
-/* Comments */
-
-.comments {
-	  padding: 10px;
+.label {
+       margin-right: 10px;
 }
 
+/* Comments */
+
+.comment {
+   margin: 20px;
+
+}
+
+.comment-unit {
+   padding: 20px 80px;
+}
 
 .head-img {
    repeat-x: true;	 
