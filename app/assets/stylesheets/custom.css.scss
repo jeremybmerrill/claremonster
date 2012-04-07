@@ -1,14 +1,10 @@
 @import "bootstrap";
 
-$pale-grey: #606060;
+$pale-grey: #666;
 $dark-grey: #333;
 $med-green: #8ec640;
 $lt-green: #bfe973;
 
-
-a:visited {
-     color: white;
-}
 
 
 
@@ -17,14 +13,14 @@ h1 {
 	text-shadow: 0px 0px 3px $dark-grey;
 }
 
-.wish-unit {
+.wish-unit, .comment-unit {
 	margin: 20px auto;
 	padding: 30px 0px;
 	border-radius: 15px;
 	background-color: $dark-grey;
 	box-shadow: 0px 0px 3px $dark-grey;
 	overflow: auto;
-	h1 {
+	h1, h2, h3 {
 		color: white;
 	}
 }
@@ -61,5 +57,12 @@ h1 {
 	background-color: yellow;
 }
 
+a:visited.btn {
+    color: white;
+}
 
+/* Comments */
 
+.comments {
+	  padding: 10px;
+}

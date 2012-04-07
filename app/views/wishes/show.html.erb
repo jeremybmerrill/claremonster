@@ -3,7 +3,7 @@
 <div class="wish-unit">
 <div class="row">
 
-<div class="span4">Image</div>
+<div class="span3">Image</div>
 <div class="span6">
     <h1 class="wish-title"><%= @wish.title %></h1>
     <p class="wish-description"><%= @wish.description %></p>
@@ -30,6 +30,16 @@
 	<% else %>
 	<a class="btn btn-success" href="#">Unclaimed!</a>
 	<% end %>
+
+	<% if current_user and current_user.admin? %>
+	    <%= link_to 'Edit Claim', editClaim_wish_path(@wish), class:
+	    "btn btn-warning"  %>
+	<% end %>
+
+	<% if current_user and !current_user.admin? %>
+	<%= render "upvotes/form" %>
+	<% end %>
+
 </div>
 
 <p>
@@ -37,24 +47,18 @@
   <%= @wish.upvotes.count %>
 </p>
 
-<p>
-  <b>Upvote now!</b>
-  <%= render "upvotes/form" %>
-</p>
 
-<% if current_user and current_user.admin? %>
-    <p>
-      <b>Claim This Wish:</b>
-      <%= link_to 'EditClaim', editClaim_wish_path(@wish) %>
-    </p>
-<% end %>
+
+
 
 </div>
 </div>
 
+<div class="comment-unit">
 <div class="row">
 
-<h2>Comments</h2>
+<div class="span12 comments"><h3>Comments</h3>
+
 <%= render @wish.comments %>
 
 <h2>Add a Comment:</h2>
@@ -62,5 +66,6 @@
 
 <%= link_to 'Edit', edit_wish_path(@wish) %> |
 <%= link_to 'Back', wishes_path %>
-
+</div>
+</div>
 </div>
