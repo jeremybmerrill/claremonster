@@ -14,6 +14,7 @@ Claremonster::Application.routes.draw do
   #root :to => 'wishes#index' #lala i have no idea what i'm doing
   resources :wishes do
     resources :comments
+    resources :upvotes
     member do
       get :editClaim
       post :claim
