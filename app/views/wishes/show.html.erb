@@ -20,7 +20,7 @@
   <%= @wish.threshold %>
 </p>
 
-<% if current_user.admin? or true %>
+<% if current_user and current_user.admin? %>
     <p>
       <b>Claim This Wish:</b>
       <%= link_to 'EditClaim', editClaim_wish_path(@wish) %>
