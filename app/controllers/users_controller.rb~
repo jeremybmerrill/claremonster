@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   # GET /wishes/1
   # GET /wishes/1.json
+
+  load_and_authorize_resource #cancan
+
+
   def show
     @user = User.find(params[:id])
 

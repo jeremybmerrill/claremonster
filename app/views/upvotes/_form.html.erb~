@@ -1,0 +1,8 @@
+<%= form_for([@wish, @wish.upvotes.build]) do |f| %>
+
+  <%= hidden_field_tag(:parent_id, "5") %>
+
+  <div class="actions">
+    <%= f.submit :'Upvote now!', class: "btn"  %>
+  </div>
+<% end %>
