@@ -1,5 +1,7 @@
 Claremonster::Application.routes.draw do
 
+match '/' => "wishes#index", :as => :user_root
+
   root to: 'static_pages#home'
   #root to: 'static_pages#home'
 	 
