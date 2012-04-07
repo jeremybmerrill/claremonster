@@ -1,0 +1,19 @@
+<header class="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+		<%= link_to "Claremonster", root_path, class: "brand" %>
+			<ul class="nav pull-right">
+				<li><%= link_to "About",	about_path %></li>
+				<li>
+                    <% if user_signed_in? %>
+                      <%= link_to current_user.email, edit_user_registration_path %>
+                    <% end %>			
+				</li>
+              <li> <% if user_signed_in? %>  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>  
+              <% else %>  
+                <%= link_to "Sign-In/Up", new_user_session_path %>  
+              <% end %></li>
+			</ul>		
+		</div>	
+	</div>	
+</header>

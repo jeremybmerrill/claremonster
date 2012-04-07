@@ -1,3 +1,4 @@
+<% provide(:title, 'Wish List') %>
 <h1>Wishes cast</h1>
 
 <table>
@@ -27,3 +28,7 @@
 <br />
 
 <%= link_to 'New Wish', new_wish_path %>
+
+<% @wishes.each do |wish| %>
+<%= render "wishinalist", wish: wish %>
+<% end %>
