@@ -1,7 +1,7 @@
 <%= form_for(@wish) do |f| %>
   <% if @wish.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@wish.errors.count, "error") %> rejected this wish:</h2>
+      <h2><%= pluralize(@wish.errors.count, "error") %> rejected this seed:</h2>
 
       <ul>
       <% @wish.errors.full_messages.each do |msg| %>
@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title, "I wish for..." %><br />
+    <%= f.label :title, "I want:", :class => "label" %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description, "Description:" %><br />
-    <%= f.text_area :description %>
+    <%= f.label :description, "Description:", :class => "label" %><br />
+    <%= f.text_area :description, :class => 'text' %>
   </div>
   <div class="field">
-    <%= f.label :deal, "Proposed incentive:" %><br />
-    <%= f.text_area :deal %>
+    <%= f.label :deal, "Proposed deal:", :class => "label" %><br />
+    <%= f.text_area :deal, :class => 'text' %>
   </div>
     <div class="field">
-    <%= f.label :threshold, "Upvotes needed:" %><br />
+    <%= f.label :threshold, "Upvotes needed to track:", :class => "label" %><br />
     <%= f.select :threshold, {"50" => 50, "100" => 100, "200" => 200, "500" => 500, "1000" => 1000} %>
   </div>
   <div class="actions">
-    <%= f.submit :"Make a Wish" %>
+    <%= f.submit :"Plant Seed", :class => "btn btn-large btn-primary" %>
   </div>
 <% end %>
