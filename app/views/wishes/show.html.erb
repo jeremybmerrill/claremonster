@@ -5,8 +5,8 @@
 <div class="wish-unit">
 <div class="row">
 
-<div class="span3">Image</div>
-<div class="span6">
+<div class="span1">Image</div>
+<div class="span8">
     <h1 class="wish-title"><%= @wish.title %></h1>
     <p class="wish-description"><%= @wish.description %></p>
     <p class="wish-deal"><span class="label">Ideal Deal</span>
@@ -49,6 +49,11 @@
 
 </div>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 26e2293fa5df5034075a1f67741a13ff6b898961
 
 
 </div>
@@ -56,8 +61,8 @@
 
 <div class="comment-unit">
 <div class="row">
-
-<div class="span12 comments"><h3>Comments</h3>
+<div class="span1"></div>
+<div class="span10"><h3>Comments</h3>
 
 <%= render @wish.comments %>
 
@@ -67,5 +72,7 @@
 <%= link_to 'Edit', edit_wish_path(@wish) %> |
 <%= link_to 'Back', wishes_path %>
 </div>
+<div class="span1"></div>
+
 </div>
 </div>
