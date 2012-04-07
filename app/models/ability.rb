@@ -7,14 +7,15 @@ class Ability
        user ||= User.new # guest user (not logged in)
        if user.admin?
          can :manage, :all
+         can :edit, :all
          can :claim, :all
          can :export, :all
        else
          can :read, :all
          can :upvote, :all
          can :create, :all
-         can :update, Wish.all.find_all{|wish| wish.user == user}
-	 can [:update, :destroy], Comment.all.find_all{|wish| wish.user == user}
+         can [:update, :edit], Wish.all.find_all{|wish| wish.user == user}
+	 can [:update, :edit, :destroy], Comment.all.find_all{|wish| wish.user == user}
        end
     
     # The first argument to `can` is the action you are giving the user permission to do.

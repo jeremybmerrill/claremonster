@@ -1,8 +1,7 @@
 Claremonster::Application.routes.draw do
 
-
-  #root to: 'wishes#index'
-  root to: 'static_pages#home'
+  root to: 'wishes#index'
+  #root to: 'static_pages#home'
 	 
   #get "static_pages/home"
   match '/about', to: 'static_pages#about'
@@ -15,6 +14,10 @@ Claremonster::Application.routes.draw do
   #root :to => 'wishes#index' #lala i have no idea what i'm doing
   resources :wishes do
     resources :comments
+    member do
+      get :editClaim
+      post :claim
+    end
   end
 
   # The priority is based upon order of creation:

@@ -1,9 +1,6 @@
 class WishesController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:show, :index]
-  before_filter :except => [:show, :index] do
-    redirect_to :new_user_session_path unless current_user
-  end
+  load_and_authorize_resource #cancan
 
 
   # GET /wishes
@@ -43,11 +40,7 @@ class WishesController < ApplicationController
 
   # GET /wishes/1/edit
   def edit
-    if current_user == @wish.user
-      @wish = Wish.find(params[:id])
-    else
-      redirect_to :wishes_path
-    end
+    @wish = Wish.find(params[:id])
   end
 
   # POST /wishes
@@ -86,19 +79,41 @@ class WishesController < ApplicationController
     end
   end
 
+  # GET /wishes/1/editClaim
+  def editClaim
+    @wish = Wish.find(params[:id])
+  end
+
+  def claim
+      @wish = Wish.find(params[:id])
+
+      claimmsg = params[:business] + " claimed this wish on " + Time.now().strftime("%A, %B %d, %Y at %I:%M%p") + "\n" + params[:message]
+      new_params = {}
+      new_params[:claimed] = true
+      new_params[:claimmsg] = claimmsg
+      #assemble msg to $Company claimed this wish at $time. $msg
+
+      #put a hidden field with claimed boolean = true
+      respond_to do |format|
+        if @wish.update_attributes(new_params)
+          format.html { redirect_to @wish, notice: 'Your wish has been claimed.' }
+          format.json { head :ok }
+        else
+          format.html { render action: "editClaim" }
+          format.json { render json: @wish.errors, status: :unprocessable_entity }
+        end
+      end
+  end
+
   # DELETE /wishes/1
   # DELETE /wishes/1.json
   def destroy
     @wish = Wish.find(params[:id])
-    if current_user == @wish.user
       @wish.destroy
 
       respond_to do |format|
         format.html { redirect_to wishes_url }
         format.json { head :ok }
       end
-    else
-      redirect_to :wishes_path
-    end
   end
 end
