@@ -13,7 +13,7 @@
          <p class="wish-done-deal"><%= wish.claimmsg %></p>
     <% end %>
 
-<p class="wish-description"> <%= link_to 'Edit', edit_wish_path(wish) %> | Posted on: <%= wish.created_at.strftime("%B %d, %Y") %> </p>
+<p class="wish-description"> <% if not current_user.nil? and not current_user.id.nil? %> <%= link_to 'Edit', edit_wish_path(wish) %> | <% end %> Posted on: <%= wish.created_at.strftime("%B %d, %Y") %> </p>
 
 </div>
 
