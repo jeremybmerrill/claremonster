@@ -18,6 +18,9 @@
 <div class="span3 wish-upvote">
 	<h2><%= wish.threshold %></h2>
 	<p>Upvotes Needed</p>
+	<p>Current Upvotes:
+		<%= wish.upvotes.count %>
+	</p>
 
 	<% if wish.claimed? %>
 	<a class="btn btn-primary" href="#">Claimed!</a>
