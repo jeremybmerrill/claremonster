@@ -97,6 +97,7 @@ class WishesController < ApplicationController
       #put a hidden field with claimed boolean = true
       respond_to do |format|
         if @wish.update_attributes(new_params)
+          @wish.textUsers
           format.html { redirect_to @wish, notice: 'Your wish has been claimed.' }
           format.json { head :ok }
         else

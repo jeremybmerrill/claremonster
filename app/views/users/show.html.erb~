@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h3>displayname"</h3>
+<h3><%= displayname %> </h3>
 
 <p>
   <b>School:</b>
@@ -9,7 +9,7 @@
 
 <p>
   <b>Likes:</b>
-  <%= @wish.likes %>
+  <%= @user.likes %>
 </p>
 
 <%= link_to 'Back', wishes_path %>

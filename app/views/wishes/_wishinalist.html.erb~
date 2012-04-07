@@ -11,25 +11,28 @@
  
     <% if wish.claimed? %>
          <p class="wish-done-deal"><%= wish.claimmsg %></p>
-    <% end %> 
+    <% end %>
 
-<p class="wish-description"> <% if not current_user.nil? and not current_user.id.nil? %> <%= link_to 'Edit', edit_wish_path(wish) %> | <% end %> Posted on: <%= wish.created_at.strftime("%B %d, %Y") %> </p>
+<p class="wish-description"> <% if not current_user.id.nil? %> <%= link_to 'Edit', edit_wish_path(wish) %> | <% end %> Posted on: <%= wish.created_at.strftime("%B %d, %Y") %> </p>
 
 </div>
 
 <div class="span3 wish-upvote">
-	<h3><%= wish.upvotes.count %>/<%= wish.threshold %> Upvotes</h3>
-
-	<% if wish.claimed? %>
-	<a class="btn btn-primary" href="#">Claimed</a>
-	<% else %>
-	<a class="btn btn-success" href="#">Unclaimed!</a>
-	<p>
+	<h2><%= wish.threshold %></h2>
+	<p>Upvotes Needed</p>
+	<p>Current Upvotes:
+		<%= wish.upvotes.count %>
 		<% @wish = wish %>
 		<%= render 'upvotes/form' %>
 	</p>
 
+	<% if wish.claimed? %>
+	<a class="btn btn-primary" href="#">Claimed!</a>
+	<% else %>
+	<a class="btn btn-success" href="#">Unclaimed!</a>
 	<% end %>
+
+
 </div>
 
 
