@@ -1,7 +1,7 @@
 Claremonster::Application.routes.draw do
 
-  #root to: 'wishes#index'
-  root to: 'static_pages#home'
+  root to: 'wishes#index'
+  #root to: 'static_pages#home'
 	 
   #get "static_pages/home"
   match '/about', to: 'static_pages#help'
