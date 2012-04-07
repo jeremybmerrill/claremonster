@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h3>displayname"</h3>
+    t.integer  "year"
+    t.string   "school"
+    t.boolean  "admin"
+    t.string   "likes"
+    t.string   "phonenumber"
+<p>
+  <b>Description:</b>
+  <%= @user.description %>
+</p>
+
+<p>
+  <b>Proposed incentive:</b>
+  <%= @wish.deal %>
+</p>
+
+<p>
+  <b>Upvotes needed:</b>
+  <%= @wish.threshold %>
+</p>
+
+<% if current_user.admin? or true %>
+    <p>
+      <b>Claim This Wish:</b>
+      <%= link_to 'EditClaim', editClaim_wish_path(@wish) %>
+    </p>
+<% end %>
+
+<h2>Comments</h2>
+<%= render @wish.comments %>
+
+<h2>Add a Comment:</h2>
+<%= render "comments/form" %>
+
+<%= link_to 'Edit', edit_wish_path(@wish) %> |
+<%= link_to 'Back', wishes_path %>

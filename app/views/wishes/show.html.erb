@@ -32,12 +32,17 @@
 	<% end %>
 </div>
 
+<% if current_user and current_user.admin? %>
+    <p>
+      <b>Claim This Wish:</b>
+      <%= link_to 'EditClaim', editClaim_wish_path(@wish) %>
+    </p>
+<% end %>
 
 </div>
 </div>
 
 <div class="row">
-
 
 <h2>Comments</h2>
 <%= render @wish.comments %>

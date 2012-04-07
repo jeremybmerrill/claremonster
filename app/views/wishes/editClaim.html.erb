@@ -1,0 +1,15 @@
+<h1>Editing wish</h1>
+
+<%= form_tag(:controller => "wishes", :action => "claim", :html => { :method => :post }) do |f| %>
+
+  <div><%= label_tag :business, "Business" %><br />
+  <%= text_field_tag :business %></div>
+
+  <div><%= label_tag :message %><br />
+  <%= text_area_tag :message %></div>
+
+  <div><%= submit_tag "Claim" %></div>
+<% end %>
+
+<%= link_to 'Show', @wish %> |
+<%= link_to 'Back', @wish %>

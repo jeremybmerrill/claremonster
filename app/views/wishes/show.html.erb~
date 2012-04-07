@@ -1,0 +1,53 @@
+<p id="notice"  class="alert alert-error"><%= notice %></p>
+<% provide(:title, @wish.title) %>
+
+<div class="row">
+
+<div class="span4">Image</div>
+<p>
+  <b>I wish for:</b>
+  <%= @wish.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @wish.description %>
+</p>
+
+<p>
+  <b>Proposed incentive:</b>
+  <%= @wish.deal %>
+</p>
+
+<p>
+  <b>Upvotes needed:</b>
+  <%= @wish.threshold %>
+</p>
+
+<<<<<<< HEAD
+<% if current_user and current_user.admin? %>
+    <p>
+      <b>Claim This Wish:</b>
+      <%= link_to 'EditClaim', editClaim_wish_path(@wish) %>
+    </p>
+<% end %>
+=======
+
+</div>
+
+<div class="row">
+
+
+
+>>>>>>> c427d327d2a84b383e75c7bd190678330aa1d65a
+
+<h2>Comments</h2>
+<%= render @wish.comments %>
+
+<h2>Add a Comment:</h2>
+<%= render "comments/form" %>
+
+<%= link_to 'Edit', edit_wish_path(@wish) %> |
+<%= link_to 'Back', wishes_path %>
+
+</div>
