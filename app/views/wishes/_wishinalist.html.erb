@@ -6,15 +6,17 @@
 <div class="span6">
   <h1 class="wish-title"><%= link_to wish.title, wish %> </h1>
   <p class="wish-description"><%= wish.description %></p>
-  <p class="wish-deal"><span class="label">Ideal Deal</span>
-  <%= wish.deal %></p>
-  <p class="wish-done-deal">
+
+  <p class="wish-deal"><span class="label">Ideal Deal</span><%= wish.deal %></p>
+ 
     <% if wish.claimed? %>
-	<%= wish.claimmsg %>
-	<% end %>
-</p>
-<p class="wish-description"><%= link_to 'Edit', edit_wish_path(wish) %> | <%= link_to 'Destroy', wish, confirm: 'Crush this wish?',
+         <p class="wish-done-deal"><%= wish.claimmsg %></p>
+    <% end %>
+
+<p class="wish-description"><%= link_to
+    'Show', wish %> | <%= link_to 'Edit', edit_wish_path(wish) %> | <%= link_to 'Destroy', wish, confirm: 'Crush this wish?',
     method: :delete %></p>
+
 </div>
 
 <div class="span3 wish-upvote">
@@ -22,6 +24,8 @@
 	<p>Upvotes Needed</p>
 	<p>Current Upvotes:
 		<%= wish.upvotes.count %>
+		<% @wish = wish %>
+		<%= render 'upvotes/form' %>
 	</p>
 
 	<% if wish.claimed? %>
@@ -29,6 +33,8 @@
 	<% else %>
 	<a class="btn btn-success" href="#">Unclaimed!</a>
 	<% end %>
+
+
 </div>
 
 
