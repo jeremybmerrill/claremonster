@@ -3,7 +3,7 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
+  <div><%= f.label :email, "Email *" %><br />
   <%= f.email_field :email %></div>
 
   <div><%= f.label :password %><br />
@@ -12,17 +12,17 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :displayname %><br />
-  <%= f.text :displayname %></div>
+  <div><%= f.label :displayname, "Display Name (public)" %><br />
+  <%= f.text_field :displayname %></div>
 
-  <div><%= f.label :year %><br />
-  <%= f.text :year %></div>
+  <div><%= f.label :year, "Graduation Year" %><br />
+  <%= f.text_field :year %></div>
 
   <% schools_array = ["CMC", "Mudd", "Pomona", "Scripps", "Pitzer", "CGU", "KGI", "Offcampus"].map { |school| [school, school.downcase] }  %>
-  <div><%= f.label :school %><br />
+  <div><%= f.label :school, "School *" %><br />
   <%= f.select :school, options_for_select(schools_array) %></div>
 
-  <div><%= f.label :phonenumber %><br />
+  <div><%= f.label :phonenumber, "Phone Number *" %><br />
   <%= f.phone_field :phonenumber %></div>
 
   <div><%= f.submit "Update" %></div>
