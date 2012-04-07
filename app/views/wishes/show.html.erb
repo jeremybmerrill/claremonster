@@ -1,5 +1,9 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"  class="alert alert-error"><%= notice %></p>
+<% provide(:title, @wish.title) %>
 
+<div class="row">
+
+<div class="span4">Image</div>
 <p>
   <b>I wish for:</b>
   <%= @wish.title %>
@@ -20,6 +24,11 @@
   <%= @wish.threshold %>
 </p>
 
+
+</div>
+
+<div class="row">
+
 <h2>Comments</h2>
 <%= render @wish.comments %>
 
@@ -28,3 +37,5 @@
 
 <%= link_to 'Edit', edit_wish_path(@wish) %> |
 <%= link_to 'Back', wishes_path %>
+
+</div>
