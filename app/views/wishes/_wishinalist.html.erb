@@ -4,7 +4,7 @@
 <div class="span3">Picture Here</div>
 
 <div class="span6">
-  <h1 class="wish-title"><%= wish.title %></h1>
+  <h1 class="wish-title"><%= link_to wish.title, wish %> </h1>
   <p class="wish-description"><%= wish.description %></p>
   <p class="wish-deal"><span class="label">Ideal Deal</span>
   <%= wish.deal %></p>
@@ -13,7 +13,7 @@
 	<%= wish.claimmsg %>
 	<% end %>
 </p>
-<p class="wish-description"><%= link_to 'Show', wish %> | <%= link_to 'Edit', edit_wish_path(wish) %> | <%= link_to 'Destroy', wish, confirm: 'Crush this wish?',
+<p class="wish-description"><%= link_to 'Edit', edit_wish_path(wish) %> | <%= link_to 'Destroy', wish, confirm: 'Crush this wish?',
     method: :delete %></p>
 </div>
 
