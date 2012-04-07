@@ -14,13 +14,13 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :displayname, "Display Name (public)" %><br />
+  <div><%= f.label :displayname, "Display Name -- public, e.g. John S." %><br />
   <%= f.text_field :displayname %></div>
 
   <div><%= f.label :year, "Graduation Year" %><br />
   <%= f.text_field :year %></div>
 
-  <% schools_array = ["CMC", "Mudd", "Pomona", "Scripps", "Pitzer", "CGU", "KGI", "Offcampus"].map { |school| [school, school.downcase] }  %>
+  <% schools_array = ["", "CMC", "Mudd", "Pomona", "Scripps", "Pitzer", "CGU", "KGI", "Offcampus"].map { |school| [school, school.downcase] }  %>
   <div><%= f.label :school, "School *" %><br />
   <%= f.select :school, options_for_select(schools_array) %></div>
 
