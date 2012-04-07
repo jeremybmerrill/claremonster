@@ -6,7 +6,8 @@ class WishesController < ApplicationController
   # GET /wishes
   # GET /wishes.json
   def index
-    @wishes = Wish.all
+    @wishes = Wish.all.sort_by { |wish| wish.upvotes.count }
+    @wishes = @wishes.reverse
 
     respond_to do |format|
       format.html # index.html.erb
