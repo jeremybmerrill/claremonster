@@ -4,10 +4,9 @@ Claremonster::Application.routes.draw do
   #root to: 'static_pages#home'
 	 
   #get "static_pages/home"
-  match '/about', to: 'static_pages#help'
+  match '/about', to: 'static_pages#about'
   
 
-	# not sure why this needs to be here
   get "static_pages/about"
 
   devise_for :users

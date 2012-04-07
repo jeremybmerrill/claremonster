@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="eng">
-<head>
-  <title>Claremonster | <%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div class="navbar">
+<header class="navbar">
 	<div class="navbar-inner">
 		<div class="container">
-		<a class="brand" href="#">Claremonster</a>
+		<%= link_to "Claremonster", root_path, class: "brand" %>
 			<ul class="nav pull-right">
 				<li><%= link_to "About",	about_path %></li>
 				<li>
@@ -24,12 +15,5 @@
               <% end %></li>
 			</ul>		
 		</div>	
-	</div>
-	
-</div>
-<div class="container">
-	<%= yield %>
-</div>
-
-</body>
-</html>
+	</div>	
+</header>
