@@ -2,7 +2,11 @@ class UpvotesController < ApplicationController
 
   def create
     @wish = Wish.find(params[:wish_id])
-   	@upvote = @wish.upvotes.create(params[:upvote])
-   		 redirect_to wish_path(@wish)
+   	if @upvote = @wish.upvotes.create(params[:upvote]).save
+
+        redirect_to wish_path(@wish)
+    else
+    	redirect_to wish_path(@wish), notice: 'You must log in to upvote a wish.'
+     end
   end
 end
