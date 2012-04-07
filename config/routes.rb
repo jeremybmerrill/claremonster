@@ -5,11 +5,11 @@ Claremonster::Application.routes.draw do
 	 
   #get "static_pages/home"
   match '/about', to: 'static_pages#about'
-  
 
   get "static_pages/about"
 
   devise_for :users
+  resources  :users, :only => [:show]
 
   #root :to => 'wishes#index' #lala i have no idea what i'm doing
   resources :wishes do
