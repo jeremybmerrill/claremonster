@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120407085817) do
 
   create_table "comments", :force => true do |t|
@@ -22,6 +23,9 @@ ActiveRecord::Schema.define(:version => 20120407085817) do
   end
 
   add_index "comments", ["wish_id"], :name => "index_comments_on_wish_id"
+=======
+ActiveRecord::Schema.define(:version => 20120407071530) do
+>>>>>>> parent of e484214... finishing adding CanCan, added signin/signout links
 
   create_table "upvotes", :force => true do |t|
     t.integer  "user_id"
@@ -46,9 +50,12 @@ ActiveRecord::Schema.define(:version => 20120407085817) do
     t.string   "displayname"
     t.integer  "year"
     t.string   "school"
+<<<<<<< HEAD
     t.boolean  "admin"
     t.string   "likes"
     t.string   "phonenumber"
+=======
+>>>>>>> parent of e484214... finishing adding CanCan, added signin/signout links
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
