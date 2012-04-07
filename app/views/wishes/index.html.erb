@@ -1,5 +1,5 @@
 <% provide(:title, 'Wish List') %>
-<%= link_to 'New Wish', new_wish_path, class: "btn btn-primary btn-large" %>
+<%= link_to 'Plant a new wish', new_wish_path, class: "btn btn-primary btn-large" %>
 
 <% @wishes.each do |wish| %>
 <%= render "wishinalist", wish: wish %>

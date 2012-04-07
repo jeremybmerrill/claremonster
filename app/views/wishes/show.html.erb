@@ -18,8 +18,8 @@
 	  </p>
        <% end %>
 
-<p class="wish-description"><%= link_to 'Edit', edit_wish_path(@wish) %> | <%= link_to 'Destroy', @wish, confirm: 'Crush this wish?',
-    method: :delete %></p>
+<p class="wish-description"><% if not current_user.nil? and not current_user.id.nil? %> <%= link_to 'Edit', edit_wish_path(wish) %> | <%= link_to 'Destroy', @wish, confirm: 'Crush this wish?',
+    method: :delete %> <% end %></p>
     
 </div>
 
@@ -38,9 +38,7 @@
 	    "btn btn-warning"  %>
 	<% end %>
 
-	<% if current_user and !current_user.admin? %>
 	<%= render "upvotes/form" %>
-	<% end %>
 
 <p>
   <b>Current upvotes:</b>
