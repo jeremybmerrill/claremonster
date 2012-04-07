@@ -38,9 +38,7 @@
 	    "btn btn-warning"  %>
 	<% end %>
 
-	<% if current_user and !current_user.admin? %>
 	<%= render "upvotes/form" %>
-	<% end %>
 
 <p>
   <b>Current upvotes:</b>
